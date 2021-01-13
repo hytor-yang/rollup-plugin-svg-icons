@@ -3,12 +3,12 @@ import path from 'path'
 import svgstore from 'svgstore'
 
 function getSprites(options) {
-  const inputFolder = options.inputFolder || 'src/icons'
+  const {inputFolder = 'src/icons', symbolIdPrefix = ''} = options
   const sprites = svgstore(options)
   const icons_dir = path.resolve(inputFolder)
   for (const file of fs.readdirSync(icons_dir)) {
     const filepath = path.join(icons_dir, file)
-    const svgid = path.parse(file).name
+    const svgid = symbolIdPrefix + path.parse(file).name
     let code = fs.readFileSync(filepath, { encoding: 'utf-8' })
     sprites.add(svgid, code)
   }

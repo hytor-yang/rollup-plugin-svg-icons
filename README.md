@@ -30,6 +30,9 @@ export default {
       // Setting to true will ignore 'output' option and not emit any bundle.
       injectToHtml: false, // it is default value
 
+      // prefix for svg symbol id, e.g. symbolIdPrefix: 'icon-' and bower.svg would result in <symbol id="icon-bower">
+      symbolIdPrefix: '', // it is default value
+
       // Also you can use any Svgstore options: 
       // https://github.com/svgstore/svgstore#svgstore-options
       //
@@ -65,6 +68,16 @@ Use href `bundle.svg#iconid` where `iconid` is base part of svg-icon filename. F
 
 <svg class="inline-svg-icon">
   <use xlink:href="bundle.svg#iconid"></use>
+</svg>
+
+<!-- use id alone if 'injectToHtml' is set to true -->
+<svg class="inline-svg-icon">
+  <use xlink:href="#iconid"></use>
+</svg>
+
+<!-- and prefix href with the same value as specified in 'symbolIdPrefix' option -->
+<svg class="inline-svg-icon">
+  <use xlink:href="#prefix-iconid"></use>
 </svg>
 ```
 

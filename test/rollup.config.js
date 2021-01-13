@@ -23,6 +23,7 @@ const test2 = {
 const test3 = {
   inputFolder: 'test/icons',
   injectToHtml: true,
+  symbolIdPrefix: 'icon-',
 }
 
 export default [
