@@ -20,6 +20,11 @@ const test2 = {
 	inline: false
 }
 
+const test3 = {
+  inputFolder: 'test/icons',
+  injectToHtml: true,
+}
+
 export default [
 	{
 		...baseConfig,
@@ -31,6 +36,12 @@ export default [
 		...baseConfig,
 		plugins: [
 			svgicons(test2)
+		]
+  },
+  {
+		...baseConfig,
+		plugins: [
+			svgicons(test3)
 		]
 	}
 ];

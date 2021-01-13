@@ -26,6 +26,10 @@ export default {
       // path for the sprite file
       output: 'dist/bundle.svg', // it is default value
 
+      // Whether to inline the sprite result to document.body on 'DOMContentLoaded' (when applicable).
+      // Setting to true will ignore 'output' option and not emit any bundle.
+      injectToHtml: false, // it is default value
+
       // Also you can use any Svgstore options: 
       // https://github.com/svgstore/svgstore#svgstore-options
       //
